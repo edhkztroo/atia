@@ -1,0 +1,128 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Smartphone, Bot, Zap, Shield } from 'lucide-react';
+
+const Hero = () => {
+  const handleDemoClick = () => {
+    const contactForm = document.getElementById('contact-form');
+    contactForm?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  return (
+    <section className="pt-24 pb-20 bg-gradient-to-br from-emerald-50 via-white to-cyan-50 overflow-hidden relative">
+      {/* Elementos decorativos de fondo */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-200/20 rounded-full translate-x-48 -translate-y-48 blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-200/20 rounded-full -translate-x-40 translate-y-40 blur-3xl"></div>
+      
+      {/* Formas geométricas decorativas */}
+      <div className="absolute top-32 left-10 w-16 h-16 border-2 border-emerald-400/30 rounded-xl rotate-45"></div>
+      <div className="absolute top-20 right-20 w-12 h-12 bg-emerald-400/20 rounded-full"></div>
+      <div className="absolute bottom-20 left-20 w-20 h-20 border-2 border-cyan-400/30 rounded-full"></div>
+      <div className="absolute bottom-32 right-32 w-8 h-8 bg-cyan-400/30 rounded-lg rotate-12"></div>
+      
+      {/* Líneas decorativas */}
+      <div className="absolute top-40 left-32 w-24 h-0.5 bg-gradient-to-r from-emerald-400 to-transparent rotate-45"></div>
+      <div className="absolute bottom-40 right-40 w-32 h-0.5 bg-gradient-to-r from-cyan-400 to-transparent -rotate-45"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-8 leading-tight tracking-tight">
+              Cobra sin datáfono,{' '}
+              <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
+                vende con inteligencia artificial
+              </span>
+            </h1>
+            
+            <div className="space-y-4 mb-8 text-lg text-gray-600">
+              <div className="flex items-center justify-center lg:justify-start space-x-3">
+                <Smartphone className="text-emerald-500 flex-shrink-0" size={24} />
+                <p>Genera links de pago en segundos y compártelos por WhatsApp, Instagram, correo o con un QR.</p>
+              </div>
+              
+              <div className="flex items-center justify-center lg:justify-start space-x-3">
+                <Bot className="text-cyan-500 flex-shrink-0" size={24} />
+                <p>Con ATIA, tu asistente virtual con IA, automatiza la atención, reservas y cobros sin salir del chat.</p>
+              </div>
+            </div>
+
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleDemoClick}
+              className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-10 py-5 rounded-full text-xl font-bold hover:from-emerald-600 hover:to-cyan-600 transition-all duration-300 shadow-2xl hover:shadow-emerald-400/50 mb-6 w-full sm:w-auto border-2 border-emerald-400/20 hover:border-emerald-300"
+            >
+              🚀 SOLICITAR DEMO GRATIS
+            </motion.button>
+
+            <p className="text-sm text-gray-500 font-medium">
+              Sin contratos. Sin costos ocultos. Sin complicaciones.
+            </p>
+
+            {/* Trust Indicators */}
+            <div className="flex items-center justify-center lg:justify-start space-x-6 mt-8 pt-8 border-t border-gray-200">
+              <div className="flex items-center space-x-2">
+                <Shield className="text-emerald-500" size={20} />
+                <span className="text-sm text-gray-600">Seguro y confiable</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Zap className="text-cyan-500" size={20} />
+                <span className="text-sm text-gray-600">Activación inmediata</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Content - Hero Image */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="relative z-10">
+              <img 
+                src="/images/payment-hero.jpg"
+                alt="Tecnología de pagos moderna"
+                className="rounded-2xl shadow-2xl w-full h-auto"
+              />
+              
+              {/* Floating elements */}
+              <motion.div 
+                animate={{ y: [-10, 10, -10] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg"
+              >
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-600">24/7</div>
+                  <div className="text-xs text-gray-500">Disponible</div>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                animate={{ y: [10, -10, 10] }}
+                transition={{ duration: 2.5, repeat: Infinity }}
+                className="absolute -bottom-4 -left-4 bg-gradient-to-r from-emerald-500 to-cyan-500 p-4 rounded-xl shadow-lg text-white"
+              >
+                <div className="text-center">
+                  <div className="text-xs">Ventas automatizadas</div>
+                  <div className="text-lg font-bold">Con IA</div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Background decoration */}
+            <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-emerald-200 to-cyan-200 rounded-full opacity-20 blur-xl"></div>
+            <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-cyan-200 to-emerald-200 rounded-full opacity-20 blur-xl"></div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
