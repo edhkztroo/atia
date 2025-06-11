@@ -83,7 +83,7 @@ const Integrations = () => {
             <span className="bg-gradient-to-r from-teal-200 to-cyan-200 bg-clip-text text-transparent">Integraciones</span> Disponibles
           </h2>
           <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
-            ATIA PAY se conecta con tus herramientas favoritas para crear un ecosistema completo de ventas
+            AtiaPay se conecta con tus herramientas favoritas para crear un ecosistema completo de ventas
           </p>
         </motion.div>
 

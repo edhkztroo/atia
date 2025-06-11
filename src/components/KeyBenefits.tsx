@@ -20,38 +20,32 @@ const KeyBenefits = () => {
     {
       icon: Smartphone,
       title: 'Facilidad de Uso',
-      description: 'Genera links de pago en segundos. Sin datáfono ni hardware costoso. Solo necesitas tu celular o computadora.',
-      features: ['Sin instalaciones complejas', 'Interfaz intuitiva', 'Activación inmediata']
+      description: 'Genera links de pago en segundos. Sin datáfono ni hardware costoso. Solo necesitas tu celular o computadora.'
     },
     {
       icon: Send,
       title: 'Multicanal',
-      description: 'Envía links por WhatsApp, correo electrónico, redes sociales o mediante códigos QR.',
-      features: ['WhatsApp Business', 'Redes sociales', 'Códigos QR']
+      description: 'Envía links por WhatsApp, correo electrónico, redes sociales o mediante códigos QR.'
     },
     {
       icon: CreditCard,
       title: 'Variedad de métodos de pago',
-      description: 'Acepta tarjetas de crédito, débito, PSE, Nequi, Daviplata y más.',
-      features: ['Todas las tarjetas', 'PSE y bancos', 'Billeteras digitales']
+      description: 'Acepta tarjetas de crédito, débito, PSE, Nequi, Daviplata y más.'
     },
     {
       icon: Zap,
       title: 'Facturación Rápida',
-      description: 'Envía cobros por cualquier canal digital de forma instantánea.',
-      features: ['Facturación automática', 'Reportes en tiempo real', 'Integración contable']
+      description: 'Envía cobros por cualquier canal digital de forma instantánea.'
     },
     {
       icon: Shield,
       title: 'Respaldo y seguridad',
-      description: 'Cumplimos con los más altos estándares de seguridad financiera.',
-      features: ['Certificación PCI DSS', 'Encriptación avanzada', 'Monitoreo 24/7']
+      description: 'Cumplimos con los más altos estándares de seguridad financiera.'
     },
     {
       icon: Settings,
       title: 'Integración con ATIA',
-      description: 'Automatiza el proceso de cobro directamente desde las conversaciones con tus clientes.',
-      features: ['IA conversacional', 'Inventario conectado', 'Ventas automáticas']
+      description: 'Automatiza el proceso de cobro directamente desde las conversaciones con tus clientes.'
     }
   ];
 
@@ -66,10 +60,10 @@ const KeyBenefits = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Beneficios <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">Clave</span>
+            Beneficios <span className="bg-gradient-to-r from-[#004234] to-[#3bffc9] bg-clip-text text-transparent">Claves</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Descubre por qué miles de negocios han elegido ATIA PAY para revolucionar sus ventas
+            Descubre por qué miles de negocios han elegido AtiaPay para revolucionar sus ventas
           </p>
         </motion.div>
 
@@ -94,18 +88,9 @@ const KeyBenefits = () => {
                     </h3>
                   </div>
                   
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed">
                     {benefit.description}
                   </p>
-                  
-                  <ul className="space-y-2">
-                    {benefit.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-500">
-                        <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full mr-3"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </motion.div>
             );
@@ -117,7 +102,7 @@ const KeyBenefits = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-16 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden"
+          className="mt-16 bg-gradient-to-r from-[#004234] to-[#3bffc9] rounded-3xl p-8 md:p-12 text-white relative overflow-hidden"
         >
           <div className="relative z-10">
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -125,11 +110,11 @@ const KeyBenefits = () => {
                 <h3 className="text-3xl font-bold mb-4">
                   Integración Completa con ATIA
                 </h3>
-                <p className="text-xl mb-6 text-emerald-50">
+                <p className="text-xl mb-6 text-white/80">
                   ATIA puede conectarse con tu software contable o sistema de inventario para brindar 
                   respuestas automáticas sobre disponibilidad, precios y facturación.
                 </p>
-                <p className="text-sm text-emerald-100">
+                <p className="text-sm text-white/70">
                   * Las integraciones personalizadas tienen costo adicional. Escríbenos para cotizar según las herramientas que uses.
                 </p>
               </div>

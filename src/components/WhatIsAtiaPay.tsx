@@ -12,25 +12,25 @@ const WhatIsAtiaPay = () => {
   const features = [
     {
       icon: Link,
-      title: 'Generar links de pago en segundos',
+      title: 'Genera links de pago en segundos',
       description: 'Crea enlaces de cobro instantáneamente sin necesidad de hardware costoso.',
       color: 'from-emerald-500 to-emerald-600'
     },
     {
       icon: MessageCircle,
-      title: 'Automatizar ventas con IA',
+      title: 'Automatiza ventas con IA',
       description: 'ATIA gestiona conversaciones en WhatsApp e Instagram automáticamente.',
       color: 'from-cyan-500 to-cyan-600'
     },
     {
       icon: CreditCard,
-      title: 'Recibir pagos con múltiples métodos',
+      title: 'Recibe pagos con múltiples métodos',
       description: 'Acepta tarjetas de crédito, débito, PSE, Nequi, Daviplata y más.',
       color: 'from-blue-500 to-blue-600'
     },
     {
       icon: TrendingUp,
-      title: 'Vender 24/7 sin esfuerzo',
+      title: 'Vende 24/7 sin esfuerzo',
       description: 'ATIA trabaja mientras duermes, incrementando tus ventas automáticamente.',
       color: 'from-purple-500 to-purple-600'
     }
@@ -56,16 +56,11 @@ const WhatIsAtiaPay = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-16 h-16 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30">
-              <span className="text-3xl">🤖</span>
-            </div>
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
-            ¿Qué es <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">ATIA PAY</span>?
+            ¿Qué es <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">AtiaPay</span>?
           </h2>
           <p className="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
-            ATIA PAY es la evolución del cobro digital. Una solución que combina lo mejor de los pagos sin datáfono 
+            AtiaPay es la evolución del cobro digital. Una solución que combina lo mejor de los pagos sin datáfono 
             con la potencia de la inteligencia artificial.
           </p>
         </motion.div>
@@ -99,34 +94,7 @@ const WhatIsAtiaPay = () => {
           })}
         </div>
 
-        {/* Additional highlight section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 bg-white/20 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/30"
-        >
-          <div className="text-center">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow-lg">
-              La revolución de los pagos digitales
-            </h3>
-            <p className="text-lg text-emerald-100 max-w-2xl mx-auto mb-8">
-              Con ATIA PAY no solo recibes pagos, automatizas todo el proceso de venta. 
-              Desde la primera consulta hasta el cobro final, todo ocurre sin tu intervención.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-emerald-400 text-emerald-900 px-6 py-3 rounded-full shadow-lg font-bold">
-                ✓ Sin instalación
-              </div>
-              <div className="bg-cyan-400 text-cyan-900 px-6 py-3 rounded-full shadow-lg font-bold">
-                ✓ Sin capacitación
-              </div>
-              <div className="bg-teal-400 text-teal-900 px-6 py-3 rounded-full shadow-lg font-bold">
-                ✓ Sin complicaciones
-              </div>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

@@ -96,10 +96,23 @@ const Footer = () => {
     setIsLoading(true);
 
     try {
-      // Simular envío de formulario (aquí se puede integrar con un servicio real)
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Crear el mensaje para el email
+      const emailBody = `
+Nuevo contacto desde AtiaPay:
+
+Nombre: ${formData.name}
+Email: ${formData.email}
+Teléfono: ${formData.phone}
+Negocio: ${formData.business}
+Mensaje: ${formData.message}
+      `;
+
+      // Crear enlace mailto
+      const mailtoLink = `mailto:ventas@airp.ws?subject=Nuevo contacto desde AtiaPay - ${formData.name}&body=${encodeURIComponent(emailBody)}`;
       
-      console.log('Form submitted:', formData);
+      // Abrir cliente de email
+      window.location.href = mailtoLink;
+      
       setIsSubmitted(true);
       
       // Reset form after showing success message
@@ -135,19 +148,18 @@ const Footer = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              ¿Listo para <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">revolucionar</span> tu negocio?
+              ¿Listo para <span className="bg-gradient-to-r from-[#004234] to-[#3bffc9] bg-clip-text text-transparent">revolucionar</span> tu negocio?
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Únete a miles de empresarios que ya están automatizando sus ventas con ATIA PAY
+              Únete a miles de empresarios que ya están automatizando sus ventas con AtiaPay
             </p>
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => {
-                const contactForm = document.getElementById('contact-form');
-                contactForm?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                window.open('https://wa.me/573022740452', '_blank');
               }}
-              className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-10 py-4 rounded-full text-xl font-bold hover:from-emerald-600 hover:to-cyan-600 transition-all duration-300 shadow-2xl hover:shadow-emerald-200 mb-4"
+              className="bg-gradient-to-r from-[#004234] to-[#3bffc9] text-white px-10 py-4 rounded-full text-xl font-bold hover:from-[#003228] hover:to-[#2ee6b8] transition-all duration-300 shadow-2xl hover:shadow-[#3bffc9]/20 mb-4"
             >
               SOLICITAR DEMO GRATIS AHORA
             </motion.button>
@@ -181,7 +193,7 @@ const Footer = () => {
                           name="name"
                           value={formData.name}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-3 bg-gray-700 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-white placeholder-gray-400 ${
+                          className={`w-full px-4 py-3 bg-gray-700 border rounded-lg focus:ring-2 focus:ring-[#3bffc9] focus:border-transparent text-white placeholder-gray-400 ${
                             errors.name ? 'border-red-500' : 'border-gray-600'
                           }`}
                           placeholder="Tu nombre"
@@ -199,7 +211,7 @@ const Footer = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-3 bg-gray-700 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-white placeholder-gray-400 ${
+                          className={`w-full px-4 py-3 bg-gray-700 border rounded-lg focus:ring-2 focus:ring-[#3bffc9] focus:border-transparent text-white placeholder-gray-400 ${
                             errors.email ? 'border-red-500' : 'border-gray-600'
                           }`}
                           placeholder="tu@email.com"
@@ -220,7 +232,7 @@ const Footer = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-3 bg-gray-700 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-white placeholder-gray-400 ${
+                          className={`w-full px-4 py-3 bg-gray-700 border rounded-lg focus:ring-2 focus:ring-[#3bffc9] focus:border-transparent text-white placeholder-gray-400 ${
                             errors.phone ? 'border-red-500' : 'border-gray-600'
                           }`}
                           placeholder="+57 300 123 4567"
@@ -238,7 +250,7 @@ const Footer = () => {
                           name="business"
                           value={formData.business}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-3 bg-gray-700 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-white placeholder-gray-400 ${
+                          className={`w-full px-4 py-3 bg-gray-700 border rounded-lg focus:ring-2 focus:ring-[#3bffc9] focus:border-transparent text-white placeholder-gray-400 ${
                             errors.business ? 'border-red-500' : 'border-gray-600'
                           }`}
                           placeholder="Ej: Restaurante, Tienda online"
@@ -258,7 +270,7 @@ const Footer = () => {
                         value={formData.message}
                         onChange={handleInputChange}
                         rows={4}
-                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-white placeholder-gray-400 resize-none"
+                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#3bffc9] focus:border-transparent text-white placeholder-gray-400 resize-none"
                         placeholder="¿Cómo podemos ayudarte a automatizar tus ventas?"
                       />
                     </div>
@@ -277,7 +289,7 @@ const Footer = () => {
                       className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${
                         isLoading 
                           ? 'bg-gray-600 cursor-not-allowed' 
-                          : 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:from-emerald-600 hover:to-cyan-600'
+                          : 'bg-gradient-to-r from-[#004234] to-[#3bffc9] text-white hover:from-[#003228] hover:to-[#2ee6b8]'
                       }`}
                     >
                       {isLoading ? (
@@ -299,8 +311,8 @@ const Footer = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-8"
                   >
-                    <CheckCircle className="w-16 h-16 text-emerald-500 mx-auto mb-4" />
-                    <h4 className="text-2xl font-bold text-emerald-400 mb-2">
+                    <CheckCircle className="w-16 h-16 text-[#3bffc9] mx-auto mb-4" />
+                    <h4 className="text-2xl font-bold text-[#3bffc9] mb-2">
                       ¡Solicitud enviada!
                     </h4>
                     <p className="text-gray-300">
@@ -330,7 +342,7 @@ const Footer = () => {
 
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#3bffc9] rounded-full flex items-center justify-center">
                     <MessageCircle className="text-white" size={20} />
                   </div>
                   <div>
@@ -340,7 +352,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#3bffc9] rounded-full flex items-center justify-center">
                     <Mail className="text-white" size={20} />
                   </div>
                   <div>
@@ -350,7 +362,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#3bffc9] rounded-full flex items-center justify-center">
                     <Phone className="text-white" size={20} />
                   </div>
                   <div>
@@ -360,7 +372,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#3bffc9] rounded-full flex items-center justify-center">
                     <MapPin className="text-white" size={20} />
                   </div>
                   <div>
@@ -374,13 +386,13 @@ const Footer = () => {
               <div className="pt-8 border-t border-gray-700">
                 <h4 className="font-semibold text-white mb-4">Síguenos en redes sociales</h4>
                 <div className="flex space-x-4">
-                  <a href="#" className="w-10 h-10 bg-gray-700 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-cyan-500 rounded-full flex items-center justify-center transition-all duration-300">
+                  <a href="#" className="w-10 h-10 bg-gray-700 hover:bg-gradient-to-r hover:from-[#004234] hover:to-[#3bffc9] rounded-full flex items-center justify-center transition-all duration-300">
                     <Instagram size={20} />
                   </a>
-                  <a href="#" className="w-10 h-10 bg-gray-700 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-cyan-500 rounded-full flex items-center justify-center transition-all duration-300">
+                  <a href="#" className="w-10 h-10 bg-gray-700 hover:bg-gradient-to-r hover:from-[#004234] hover:to-[#3bffc9] rounded-full flex items-center justify-center transition-all duration-300">
                     <Facebook size={20} />
                   </a>
-                  <a href="#" className="w-10 h-10 bg-gray-700 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-cyan-500 rounded-full flex items-center justify-center transition-all duration-300">
+                  <a href="#" className="w-10 h-10 bg-gray-700 hover:bg-gradient-to-r hover:from-[#004234] hover:to-[#3bffc9] rounded-full flex items-center justify-center transition-all duration-300">
                     <MessageCircle size={20} />
                   </a>
                 </div>
@@ -397,15 +409,15 @@ const Footer = () => {
             <div className="flex items-center space-x-4 mb-4 md:mb-0">
               <img 
                 src="/atia-pay-logo-oficial.png" 
-                alt="ATIA PAY" 
+                alt="AtiaPay" 
                 className="h-8 w-20 object-contain"
               />
-              <span className="text-gray-300">© 2025 ATIA PAY. Todos los derechos reservados.</span>
+              <span className="text-gray-300">© 2025 AtiaPay. Todos los derechos reservados.</span>
             </div>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-emerald-400 transition-colors">Términos y Condiciones</a>
-              <a href="#" className="hover:text-emerald-400 transition-colors">Política de Privacidad</a>
-              <a href="#" className="hover:text-emerald-400 transition-colors">Soporte</a>
+              <a href="#" className="hover:text-[#3bffc9] transition-colors">Términos y Condiciones</a>
+              <a href="#" className="hover:text-[#3bffc9] transition-colors">Política de Privacidad</a>
+              <a href="#" className="hover:text-[#3bffc9] transition-colors">Soporte</a>
             </div>
           </div>
         </div>

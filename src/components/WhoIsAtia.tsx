@@ -71,11 +71,7 @@ const WhoIsAtia = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-20 h-20 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center shadow-xl shadow-emerald-500/30">
-              <span className="text-4xl">🧠</span>
-            </div>
-          </div>
+
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             ¿Quién es <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">ATIA</span>?
           </h2>
