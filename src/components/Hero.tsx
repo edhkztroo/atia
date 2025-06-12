@@ -8,19 +8,7 @@ const Hero = () => {
   };
   return (
     <section className="pt-24 pb-20 bg-gradient-to-br from-emerald-50 via-white to-cyan-50 overflow-hidden relative">
-      {/* Elementos decorativos de fondo */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#004234]/20 rounded-full translate-x-48 -translate-y-48 blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#3bffc9]/20 rounded-full -translate-x-40 translate-y-40 blur-3xl"></div>
-      
-      {/* Formas geométricas decorativas */}
-      <div className="absolute top-32 left-10 w-16 h-16 border-2 border-[#3bffc9]/30 rounded-xl rotate-45"></div>
-      <div className="absolute top-20 right-20 w-12 h-12 bg-[#3bffc9]/20 rounded-full"></div>
-      <div className="absolute bottom-20 left-20 w-20 h-20 border-2 border-[#004234]/30 rounded-full"></div>
-      <div className="absolute bottom-32 right-32 w-8 h-8 bg-[#004234]/30 rounded-lg rotate-12"></div>
-      
-      {/* Líneas decorativas */}
-      <div className="absolute top-40 left-32 w-24 h-0.5 bg-gradient-to-r from-[#3bffc9] to-transparent rotate-45"></div>
-      <div className="absolute bottom-40 right-40 w-32 h-0.5 bg-gradient-to-r from-[#004234] to-transparent -rotate-45"></div>
+  
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -114,9 +102,7 @@ const Hero = () => {
               </motion.div>
             </div>
 
-            {/* Background decoration */}
-            <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-[#004234]/20 to-[#3bffc9]/20 rounded-full opacity-20 blur-xl"></div>
-            <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-[#3bffc9]/20 to-[#004234]/20 rounded-full opacity-20 blur-xl"></div>
+        
           </motion.div>
         </div>
       </div>
